@@ -1,4 +1,5 @@
 import { Board } from "./Board.js";
+import { Game } from "./Game.js";
 
 let firstGeneration = [
     [".", ".", ".", ".", ".", ".", ".", "."],
@@ -8,6 +9,14 @@ let firstGeneration = [
   ];
 
   const board = new Board(firstGeneration);
-  const neighbors = board.getNeighbors(firstGeneration, 1, 4);
-  const count = board.countLiveNeighbors(neighbors);
-  console.log(count);
+  const game = new Game();
+  const nextGeneration = game.getNextGeneration(board);
+  printGrid(nextGeneration);
+
+
+
+  function printGrid(grid) {
+    grid.forEach(row => console.log(row.join(" ")));
+  }
+
+  

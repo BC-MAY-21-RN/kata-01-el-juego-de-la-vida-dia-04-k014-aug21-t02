@@ -26,5 +26,5 @@ test("Get matrix test", () => {
     const testMatrix = [[".", ".", "*"], [".", "*", "."]];
     const expectedMatrix = [[".", ".", "."], [".", ".", "."]];
     const board = new Board(testMatrix);
-    expect(board.getMatrix()).toEqual(expectedMatrix);    
+    expect(board.getNextGenerationMatrix()).toEqual(expectedMatrix);    
 });

@@ -5,6 +5,7 @@ export class Board {
     constructor(firstGeneration){
         const numRows = firstGeneration.length;
         const numCols = firstGeneration[0].length;
+        this.actualGeneration = firstGeneration;
         this.nextGeneration = this.generateNewMatrix(numRows, numCols);
     }
 
@@ -18,7 +19,11 @@ export class Board {
         return newMatrix;
     }
 
-    getMatrix() {
+    getActualGenerationMatrix() {
+        return this.actualGeneration;
+    }
+
+    getNextGenerationMatrix() {
         return this.nextGeneration;
     }
 
