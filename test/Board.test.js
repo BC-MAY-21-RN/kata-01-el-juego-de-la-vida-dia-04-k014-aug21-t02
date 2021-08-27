@@ -1,4 +1,4 @@
-import { Board } from '../src/Board.js';
+import { Board } from "../src/Board.js";
 
 test("Generate matrix test", () => {
     const testMatrixRows = 2;
