@@ -4,8 +4,13 @@
   "description": "Kata dia 4",
   "main": "src/index.js",
   "type": "module",
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
   "scripts": {
-    "test": "test",
+    "test": "jest",
     "start": "node src/index.js"
   },
   "repository": {
@@ -19,7 +24,10 @@
   },
   "homepage": "https://github.com/BC-MAY-21-RN/kata-01-el-juego-de-la-vida-dia-04-k014-aug21-t02#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.15.0",
+    "babel-jest": "^27.1.0",
     "eslint": "^7.32.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "jest": "^27.1.0"
   }
 }
