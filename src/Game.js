@@ -17,12 +17,15 @@ export class Game {
     }
 
     applyRules(originalMatrix, newMatrix, neighbors, rowIndex, colIndex) {
-        if(originalMatrix[rowIndex][colIndex] == States.LIVE && (neighbors < 2 || neighbors > 3)) {
+        const hasTwoOrThreeNeighbors = neighbors === 3 || neighbors == 2;
+        const hasThreeNeighbors = neighbors === 3;
+        const isCellAlive = originalMatrix[rowIndex][colIndex] === States.LIVE;
+        if(isCellAlive && !hasTwoOrThreeNeighbors) {
             newMatrix[rowIndex][colIndex] = States.DEAD;
-        } else if(originalMatrix[rowIndex][colIndex] == States.DEAD && neighbors == 3) {
+        } else if(!isCellAlive && hasThreeNeighbors) {
             newMatrix[rowIndex][colIndex] = States.LIVE;
         } else {
-            newMatrix[rowIndex][colIndex]=originalMatrix[rowIndex][colIndex];
+            newMatrix[rowIndex][colIndex] = originalMatrix[rowIndex][colIndex];
         }
     }
 
