@@ -1,4 +1,5 @@
 import { States } from "./Constants.js";
+import { MatrixHandler } from "./MatrixHandler.js";
 
 export class Board {
 
@@ -6,17 +7,8 @@ export class Board {
         const numRows = firstGeneration.length;
         const numCols = firstGeneration[0].length;
         this.actualGeneration = firstGeneration;
-        this.nextGeneration = this.generateNewMatrix(numRows, numCols);
-    }
-
-    generateNewMatrix(rows, cols) {
-        let newMatrix = [];
-        for(let row = 0; row < rows; row++) {
-            let matrixRow = new Array(cols);
-            matrixRow.fill(".");
-            newMatrix.push(matrixRow);
-        }
-        return newMatrix;
+        this.matrixHandler = new MatrixHandler();
+        this.nextGeneration = this.matrixHandler.generateNewMatrix(numRows, numCols);
     }
 
     getActualGenerationMatrix() {
