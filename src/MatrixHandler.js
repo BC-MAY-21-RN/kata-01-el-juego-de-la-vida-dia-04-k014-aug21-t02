@@ -10,4 +10,8 @@ export class MatrixHandler {
         return newMatrix;
     }
 
+    printMatrix(matrix) {
+        matrix.forEach(row => console.log(row.join(" ")));
+    } 
+
 }
